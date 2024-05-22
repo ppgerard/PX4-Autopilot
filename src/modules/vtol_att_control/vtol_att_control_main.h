@@ -92,8 +92,6 @@ using namespace time_literals;
 
 extern "C" __EXPORT int vtol_att_control_main(int argc, char *argv[]);
 
-static constexpr float kMaxVTOLAttitudeControlTimeStep = 0.1f; // max time step [s]
-
 class VtolAttitudeControl : public ModuleBase<VtolAttitudeControl>, public ModuleParams, public px4::WorkItem
 {
 public:
