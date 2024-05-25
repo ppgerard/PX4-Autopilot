@@ -16,6 +16,7 @@
 #include "imxrt_clockconfig.h"
 
 #include <nvic.h>
+#include <mpu.h>
 #include <lib/systick.h>
 #include <lib/flash_cache.h>
 
@@ -581,6 +582,15 @@ led_toggle(unsigned led)
 void
 arch_do_jump(const uint32_t *app_base)
 {
+	mpu_configure_region(IMXRT_ITCM_BASE, 256 * 1024,
+			     /* Instruction access Enabled */
+			     MPU_RASR_AP_RWRW  | /* P:R0   U:R0                */
+			     MPU_RASR_TEX_NOR    /* Normal                     */
+			     /* Not Cacheable              */
+			     /* Not Bufferable             */
+			     /* Not Shareable              */
+			     /* No Subregion disable       */
+			    );
 
 	/* extract the stack and entrypoint from the app vector table and go */
 	uint32_t stacktop = app_base[APP_VECTOR_OFFSET_WORDS];
