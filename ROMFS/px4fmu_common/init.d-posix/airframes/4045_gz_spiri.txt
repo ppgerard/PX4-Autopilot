@@ -1,0 +1,172 @@
+#!/bin/sh
+#
+# @name Gazebo spiri
+#
+# @type Quadrotor
+#
+
+. ${R}etc/init.d/rc.mc_defaults
+
+PX4_SIMULATOR=${PX4_SIMULATOR:=gz}
+PX4_GZ_WORLD=${PX4_GZ_WORLD:=default}
+PX4_SIM_MODEL=${PX4_SIM_MODEL:=spiri}
+
+param set-default SIM_GZ_EN 1
+
+param set-default SENS_EN_GPSSIM 1
+param set-default SENS_EN_BAROSIM 0
+param set-default SENS_EN_MAGSIM 1
+
+param set-default CA_AIRFRAME 0
+param set-default CA_ROTOR_COUNT 4
+
+param set-default CA_ROTOR0_PX 0.165037
+param set-default CA_ROTOR0_PY 0.165037
+param set-default CA_ROTOR0_KM  0.01419
+
+param set-default CA_ROTOR1_PX -0.165037
+param set-default CA_ROTOR1_PY -0.165037
+param set-default CA_ROTOR1_KM  0.01419
+
+param set-default CA_ROTOR2_PX 0.165037
+param set-default CA_ROTOR2_PY -0.165037
+param set-default CA_ROTOR2_KM -0.01419
+
+param set-default CA_ROTOR3_PX -0.165037
+param set-default CA_ROTOR3_PY 0.165037
+param set-default CA_ROTOR3_KM -0.01419
+
+param set-default SIM_GZ_EC_FUNC1 101
+param set-default SIM_GZ_EC_FUNC2 102
+param set-default SIM_GZ_EC_FUNC3 103
+param set-default SIM_GZ_EC_FUNC4 104
+
+param set-default SIM_GZ_EC_MIN1 150
+param set-default SIM_GZ_EC_MIN2 150
+param set-default SIM_GZ_EC_MIN3 150
+param set-default SIM_GZ_EC_MIN4 150
+
+param set-default SIM_GZ_EC_MAX1 1095
+param set-default SIM_GZ_EC_MAX2 1095
+param set-default SIM_GZ_EC_MAX3 1095
+param set-default SIM_GZ_EC_MAX4 1095
+
+# MODIFIED
+
+# param set-default EKF2_EN 1
+# param set-default EKF2_EV_CTRL 1
+# param set-default EKF2_EVP_NOISE 0.01
+# param set-default EKF2_HGT_REF 3
+# param set-default EKF2_EV_NOISE_MD 0
+# param set-default EKF2_EV_POS_X 0
+# param set-default EKF2_EV_POS_Y 0
+# param set-default EKF2_EV_POS_Z 0
+
+# param set-default SENS_EN_IRLOCK 1
+# param set-fefault LTEST_MODE 1
+# param set-fefault PLD_FAPPR_ALT 0.5
+# param set-fefault RTL_PLD_MD 0
+# param set-fefault LTEST_MODE 2
+
+param set-default MC_AIRMODE 0
+param set-default MC_AT_START 0
+# param set-default MC_PITCHRATE_D 0.0040
+param set-default MC_PITCHRATE_I 0.2000
+param set-default MC_ROLLRATE_I 0.2000
+param set-default MC_YAWRATE_I 0.0400
+# param set-default MC_YAWRATE_K 0.6000
+param set-default MPC_POS_MODE 4
+param set-default MPC_VEL_MANUAL 20.0000
+param set-default MPC_XY_CRUISE 20.0000
+param set-default MPC_XY_P 1.0000
+param set-default MPC_XY_VEL_ALL 20.0000
+param set-default MPC_XY_VEL_D_ACC 0.4000
+param set-default MPC_XY_VEL_I_ACC 0.2000
+param set-default MPC_XY_VEL_MAX 20.0000
+param set-default MPC_XY_VEL_P_ACC 2.0000
+
+param set-default MC_PITCHRATE_D 0.0020
+param set-default MC_PITCH_P 3.0000
+param set-default MC_ROLLRATE_D 0.0020
+param set-default MC_ROLL_P 3.0000
+param set-default MC_YAWRATE_K 1.0000
+param set-default MC_YAW_P 2.0000
+
+# param set-default COM_FLTMODE1 1
+# param set-default MC_AT_START 0
+# param set-default MC_AT_SYSID_AMP 3.0000
+# param set-default MC_PITCHRATE_D 0.0041
+# param set-default MC_PITCHRATE_I 0.3256
+# param set-default MC_PITCHRATE_K 1.0000
+# param set-default MC_PITCHRATE_P 0.2455
+# param set-default MC_PITCH_P 3.8898
+# param set-default MC_ROLLRATE_D 0.0040
+# param set-default MC_ROLLRATE_I 0.3236
+# param set-default MC_ROLLRATE_K 1.0000
+# param set-default MC_ROLLRATE_P 0.2443
+# param set-default MC_ROLL_P 3.9095
+# param set-default MC_YAWRATE_D 0.0159
+# param set-default MC_YAWRATE_I 0.2585
+# param set-default MC_YAWRATE_K 1.0000
+# param set-default MC_YAWRATE_P 0.2696
+# param set-default MC_YAW_P 3.5421
+# param set-default MPC_POS_MODE 0
+# param set-default MPC_XY_P 1.2000
+# param set-default MPC_XY_VEL_I_ACC 1.0000
+# param set-default MPC_XY_VEL_P_ACC 1.7000
+# param set-default MPC_Z_VEL_D_ACC 0.2000
+# param set-default MPC_Z_VEL_I_ACC 0.2000
+# param set-default THR_MDL_FAC 0.3000
+
+# param set-default MC_ROLLRATE_P 1.0
+# param set-default MC_ROLLRATE_I 0.0
+# param set-default MC_ROLLRATE_D 0.0
+
+# param set-default MC_PITCHRATE_P 1.0
+# param set-default MC_PITCHRATE_I 0.0
+# param set-default MC_PITCHRATE_D 0.0
+
+# param set-default MC_YAWRATE_P 1.0
+# param set-default MC_YAWRATE_I 0.0
+# param set-default MC_YAWRATE_D 0.0
+
+# param set-default MC_ROLL_P 10.0
+# param set-default MC_ROLL_I 0.0
+# param set-default MC_ROLL_D 5.0
+
+# param set-default MC_PITCH_P 10.0
+# param set-default MC_PITCH_I 0.0
+# param set-default MC_PITCH_D 5.0
+
+# param set-default MC_YAW_P 2.0
+# param set-default MC_YAW_I 0.0
+# param set-default MC_YAW_D 1.0
+
+# param set-default MPC_XY_P 1.1
+# param set-default MPC_XY_I 0.0
+# param set-default MPC_XY_D 0.0
+
+# param set-default MPC_XY_TRAJ_P 1.1
+# param set-default MPC_XY_TRAJ_I 0.0
+# param set-default MPC_XY_TRAJ_D 0.0
+
+# param set-default MPC_Z_P 1.0
+# param set-default MPC_Z_I 0.0
+# param set-default MPC_Z_D 0.2
+
+# param set-default MPC_XY_VEL_P_ACC 5.0
+# param set-default MPC_XY_VEL_I_ACC 0.0
+# param set-default MPC_XY_VEL_D_ACC 2.3
+
+# param set-default MPC_XY_VEL_MAX  20.0
+
+# param set-default MPC_Z_VEL_P_ACC 5.0
+# param set-default MPC_Z_VEL_I_ACC 0.0
+# param set-default MPC_Z_VEL_D_ACC 1.0
+
+# param set-default MPC_Z_VEL_ALL -1.0
+
+
+
+
+param set-default MPC_THR_HOVER 0.60
