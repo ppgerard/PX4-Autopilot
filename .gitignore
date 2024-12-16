@@ -108,19 +108,3 @@ src/systemcmds/topic_listener/listener_generated.cpp
 
 # colcon
 log/
-
-# submodules
-Tools/simulation/flightgear/flightgear_bridge
-Tools/simulation/gazebo-classic/sitl_gazebo-classic
-Tools/simulation/jmavsim/jMAVSim
-Tools/simulation/jsbsim/jsbsim_bridge
-boards/modalai/voxl2/libfc-sensor-api
-platforms/nuttx/NuttX/apps
-platforms/nuttx/NuttX/nuttx
-src/drivers/actuators/vertiq_io/iq-module-communication-cpp
-src/drivers/gps/devices
-src/drivers/uavcan/libdronecan/dsdl
-src/lib/crypto/monocypher
-src/lib/events/libevents
-src/lib/heatshrink/heatshrink
-src/modules/uxrce_dds_client/Micro-XRCE-DDS-Client
