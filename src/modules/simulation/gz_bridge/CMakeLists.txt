@@ -118,7 +118,7 @@ if (gz-transport${GZ_TRANSPORT_VERSION}_FOUND)
 	# Example: gz_x500_flow_forest
 	file(GLOB gz_worlds ${PX4_SOURCE_DIR}/Tools/simulation/gz/worlds/*.sdf)
 	file(GLOB gz_airframes ${PX4_SOURCE_DIR}/ROMFS/px4fmu_common/init.d-posix/airframes/*_gz_*)
-
+	
 	foreach(gz_airframe IN LISTS gz_airframes)
 		set(model_name)
 		string(REGEX REPLACE ".*_gz_" "" model_name ${gz_airframe})
