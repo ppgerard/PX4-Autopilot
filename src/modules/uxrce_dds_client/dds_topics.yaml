@@ -79,6 +79,35 @@ publications:
 
   - topic: /fmu/out/home_position
     type: px4_msgs::msg::HomePosition
+# Add low level setpoints topics to publications
+
+  - topic: /fmu/in/vehicle_thrust_setpoint
+    type: px4_msgs::msg::VehicleThrustSetpoint
+
+  - topic: /fmu/in/vehicle_torque_setpoint
+    type: px4_msgs::msg::VehicleTorqueSetpoint
+
+  - topic: /fmu/in/actuator_motors
+    type: px4_msgs::msg::ActuatorMotors
+
+  - topic: /fmu/in/actuator_servos
+    type: px4_msgs::msg::ActuatorServos
+
+  - topic: /fmu/in/vehicle_thrust_setpoint_virtual_fw
+    type: px4_msgs::msg::VehicleThrustSetpoint
+
+  - topic: /fmu/in/vehicle_thrust_setpoint_virtual_mc
+    type: px4_msgs::msg::VehicleThrustSetpoint
+
+  - topic: /fmu/in/vehicle_torque_setpoint_virtual_fw
+    type: px4_msgs::msg::VehicleTorqueSetpoint
+
+  - topic: /fmu/in/vehicle_torque_setpoint_virtual_mc
+    type: px4_msgs::msg::VehicleTorqueSetpoint
+
+
+
+
 
 # Create uORB::Publication
 subscriptions:
