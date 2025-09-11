@@ -94,6 +94,7 @@ px4_add_romfs_files(
 	4045_gz_custom_vtol
 	4046_gz_custom_tiltrotor
 	4047_gz_t2_cruza_vtol
+	4048_gz_cognifly
 
 	6011_gazebo-classic_typhoon_h480
 	6011_gazebo-classic_typhoon_h480.post
