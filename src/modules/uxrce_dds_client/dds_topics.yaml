@@ -130,10 +130,6 @@ publications:
     type: px4_msgs::msg::VehicleRatesSetpoint
 
 
-
-
->>>>>>> 93bbfe4c58 (Added low-level setpoints to the PX4-ROS2 bridge)
-
 # Create uORB::Publication
 subscriptions:
   - topic: /fmu/in/register_ext_component_request
