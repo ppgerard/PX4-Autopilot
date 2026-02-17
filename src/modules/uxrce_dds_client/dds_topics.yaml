@@ -129,6 +129,9 @@ publications:
   - topic: /fmu/out/vehicle_rates_setpoint
     type: px4_msgs::msg::VehicleRatesSetpoint
 
+  - topic: /fmu/out/distance_sensor
+    type: px4_msgs::msg::DistanceSensor
+
 
 # Create uORB::Publication
 subscriptions:
